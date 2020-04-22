@@ -34,9 +34,9 @@ label_name | text
 task_id | integer
 timestamp | datetime
 
-Deployment Procedure to heroku
-git add -A: Since Heroku uses Git to deploy, we need to commit first
-git commit -m "init: Use git commit command to commit"
-Heroku create: to create a new application to heroku
-git push heroku master: to push and deploy to heroku
-heroku run rake db:migrate: execute migration manually
+# Deployment Procedure to heroku
+1. git add -A: Since Heroku uses Git to deploy, we need to commit first
+2. git commit -m "init: Use git commit command to commit"
+3. Heroku create: to create a new application to heroku
+4. git push heroku master: to push and deploy to heroku
+5. heroku run rake db:migrate: execute migration manually
