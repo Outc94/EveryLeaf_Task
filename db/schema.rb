@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_151856) do
     t.datetime "start_at"
     t.datetime "end_at"
     t.text "status"
+    t.integer "priority"
     t.index ["status"], name: "index_tasks_on_status"
     t.index ["title"], name: "index_tasks_on_title"
   end
