@@ -1,9 +1,30 @@
+<div class="p-3 mb-2 bg-white text-dark border">
+<h1 class="text-center">Task Management System</h1>
+</div>
+<div class="mx-4 px-4 bg-light">
 <p id="notice"><%= notice %></p>
-<div>
-  <p><strong>Title</strong>：<%= @task.title %></p>
-  <p><strong>Content</strong>：<%= @task.content %></p>
+
+<div class="text-center">
+<strong>Created at: </strong>
+<%= @task.created_at.strftime("%Hh%Mmins %Y, %B %d") %>
 </div>
+<h5 class="my-2">
+  <strong><%= @task.title %></strong>
+</h5>
+<p>Task starts on: <strong><%= @task.start_at.strftime("%B  %d, %Y") %></strong> and it ends on: <strong><%= @task.end_at.strftime("%B  %d, %Y") %></strong><p>
+<h6 class="mx-2 bg-white p-2">
+  <%= @task.content %>
+</h6>
+<p>
+  <strong>Status: </strong>
+  <%= @task.status %><br>
+  <strong>Priority:</strong>
+  <%= @task.priority %>
+</p>
+
+<button class="btn btn-outline-primary"><%= link_to 'Edit', edit_task_path(@task) %></button>
+<button class="btn btn-outline-primary"><%= link_to 'Return', tasks_path %></button>
 </div>
-<%= link_to 'Edit', edit_task_path(@task) %>
-<%= link_to 'Return', tasks_path %>
-</div>
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #fff;color:black">
+  <a class="navbar-brand" href="#" style="margin:auto">Copyright © 2020 TMS. ALL RIGHTS RESERVED. </a>
+  </nav>
