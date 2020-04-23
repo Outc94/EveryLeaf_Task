@@ -1,29 +1,79 @@
-<p id="notice"><%= notice %></p>
+<div class="mx-5 bg-white">
 
-<h1>Tasks</h1>
+  <div class="p-3 mb-2 bg-white text-dark border">
+  <h1 class="text-center">Task Management System</h1>
+  <h2 class="text-center">All Tasks</h2>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Tittle</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
 
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.title %></td>
-        <td><%= task.content %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class=" col-6  px-5">
+  <%= paginate @tasks %>
+</div>
+<div class=" col-6  form-inline my-2 my-lg-0"><%= search_form_for @search do |f| %>
+  <div class="row float-right">
+    <div class="mx-4">
+      <%= f.text_field :title_cont, placeholder: "Search with Title", class:"field form-control mr-sm-2"%>
+    </div>
+    <div class>
+      <div class="row">
+      <div>
+        <%= f.text_field :status_cont, placeholder: "Search with Status", class:"field form-control mr-sm-2" %>
+        </div>
+        <%= f.submit "Search", class:"btn btn-outline-success rounded-pill"%>
+      </div>
+    </div>
+    </div>
+  </div>
+    <button class="btn btn-outline-success"><%= link_to 'New Task', new_task_path%></button>
+  <div>
+<% end %>
+</div>
 
-<br>
+<div>
+  <button class="btn btn-outline-primary"><%= link_to 'Sort by Deadline', tasks_path(sort_deadline: 'true') %></button>
+  <button class="btn btn-outline-primary"><%= link_to 'Sort by Priority', tasks_path(sort_priority: 'true') %></button>
+</div>
 
-<%= link_to 'New Task', new_task_path %>
+
+</div>
+
+<% @tasks.each do |task| %>
+      <div class=" p-4 border rounded my-2 bg-light">
+        <div class="text-center">
+          <p>
+            <strong>Created at: </strong>
+              <%= task.created_at %>
+          </p>
+        </div>
+        <h5 class="my-2">
+          <strong><%= task.title %></strong>
+        </h5>
+        <h6>Task starts on: <strong><%= task.start_at %></strong> and it ends on: <strong><%= task.end_at %></strong><h6>
+        <p class="mx-2 bg-white p-2">
+          <%= task.content %>
+        </p>
+        <div class="row">
+
+          <div class="col col-10">
+            <button class="btn btn-outline-info"><%= link_to 'Show', task %></button>
+            <button class="btn btn-outline-primary"><%= link_to 'Edit', edit_task_path(task) %></button>
+            <button class="btn btn-outline-danger"><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure you want to delete this TASK?' } %></button>
+          </div>
+          <div class="col">
+            <p>
+              <strong>Status: </strong>
+              <%= task.status %><br>
+              <strong>Priority:</strong>
+              <%= task.priority %>
+            </p>
+          </div>
+        </div>
+
+      </div>
+  <% end %>
+<div class="px-5"><%= paginate @tasks %></div>
+</div>
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #fff;color:black">
+  <a class="navbar-brand" href="#" style="margin:auto">Copyright © 2020 TMS. ALL RIGHTS RESERVED. </a>
+  </nav>

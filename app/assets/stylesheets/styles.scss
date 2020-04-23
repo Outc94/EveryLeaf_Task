@@ -1,0 +1,106 @@
+
+.navbar li a{
+  background: transparent;
+  font-size: 18px;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navbar li a:hover{
+  font-size: 19px;
+  font-weight: bold;
+}
+a:hover{
+  text-decoration: none;
+}
+button a:hover{
+  text-decoration: none;
+  background: transparent;
+}
+
+.body{
+  background-color: #eaeaec;
+}
+.super{
+  width: 700px;
+  margin:10px auto;
+}
+.form-group{
+  width: 100%;
+}
+.main-form{
+  width: 350px;
+  background-color: white;
+  padding: 12px;
+  margin: 5px auto;
+}
+.login{
+  background-color: #3897f0;
+}
+.border{
+  border-radius: 5px;
+  padding: 10px;
+}
+img{
+  max-width: 650px;
+}
+.btn-info{
+  margin-bottom: 10px;
+}
+.btn-info a{
+  color: white;
+  font-weight: bold;
+}
+.btn-info a:hover{
+  text-decoration: none;
+  background-color: transparent;
+  color: #eaeaec;
+  font-size: 18px;
+}
+a:hover{
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 14px;
+}
+.btn-warning a{
+  color: black;
+  font-weight: bold;
+}
+.btn-warning a:hover{
+  text-decoration: none;
+  background-color: transparent;
+  color: black;
+  font-size: 18px;
+}
+#main2{
+    margin: auto;
+    height: 100%;
+}
+
+#left{
+    width: 30%;
+    float: left;
+    height: auto;
+}
+#right{
+    width: 30%;
+    float: right;
+    height: auto;
+    padding: 5px;
+
+}
+.navbar-default{
+  background-color: black;
+  color: black;
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.navbar-default a{
+  color: white;
+  margin: 5px;
+  height: 20px;
+}
