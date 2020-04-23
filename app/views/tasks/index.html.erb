@@ -43,13 +43,13 @@
         <div class="text-center">
           <p>
             <strong>Created at: </strong>
-              <%= task.created_at.strftime("%Hh%Mmins %Y, %B %d") %>
+              <%= task.created_at %>
           </p>
         </div>
         <h5 class="my-2">
           <strong><%= task.title %></strong>
         </h5>
-        <h6>Task starts on: <strong><%= task.start_at.strftime("%B %d, %Y") %></strong> and it ends on: <strong><%= task.end_at.strftime("%B %d, %Y") %></strong><h6>
+        <h6>Task starts on: <strong><%= task.start_at %></strong> and it ends on: <strong><%= task.end_at %></strong><h6>
         <p class="mx-2 bg-white p-2">
           <%= task.content %>
         </p>
