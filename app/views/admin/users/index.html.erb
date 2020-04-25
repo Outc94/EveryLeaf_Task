@@ -1,4 +1,4 @@
-
+<% if current_user.admin  %>
 <div class="mx-5">
   <div class="row">
     <div class="col-2">
@@ -62,6 +62,19 @@
     </tbody>
   </table>
 </div>
+<% else %>
+<div class="row">
+  <div class="col-2">
+    <button class="btn btn-outline-success mt-5">
+      <%= link_to 'Return to Home Page', tasks_path %>
+    </button>
+  </div>
+  <div class="col-8">
+    <h1 class="text-center my-4">Only Admins Can View This Page</h1>
+  </div>
+</div>
+<% end %>
+
 <nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #fff;color:black">
   <a class="navbar-brand" href="#" style="margin:auto">Copyright © 2020 TMS. ALL RIGHTS RESERVED. </a>
   </nav>
