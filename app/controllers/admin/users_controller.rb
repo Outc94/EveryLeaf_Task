@@ -35,17 +35,17 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    if @user.id == current_user.id
-      redirect_to admin_users_url, notice: "You cannot delete Signed In user"
-      @admins = User.admin
-    elsif @admins == 1
-      redirect_to admin_users_url, notice: "At least one admin must remain!"
-    else
-      @user.destroy
-      redirect_to admin_users_url, notice: 'User was successfully deleted.'
-    end
-  end
-  private
+     if @user.id == current_user.id
+       redirect_to admin_users_url, notice: "You cannot delete Signed In user"
+       @admins = User.admin
+     elsif @admins == 1
+       redirect_to admin_users_url, notice: "At least one admin must remain!"
+     else
+       @user.destroy
+       redirect_to admin_users_url, notice: 'User was successfully deleted.'
+     end
+   end
+   private
 
   def set_user
     @user = User.find(params[:id])
@@ -54,4 +54,5 @@ class Admin::UsersController < ApplicationController
     params.require(:user).permit(:firstname, :lastname, :email, :password,
                                  :password_confirmation, :admin)
   end
+
 end
