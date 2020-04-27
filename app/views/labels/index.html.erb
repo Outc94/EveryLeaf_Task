@@ -1,0 +1,38 @@
+<div class="w-75 mx-auto text-center">
+
+  <div class="row">
+    <div class="col-2">
+      <button class="btn btn-outline-success  mt-5">
+        <%= link_to 'Create Label', new_label_path %>
+      </button>
+    </div>
+    <div class="col-8">
+      <h1 class="text-center my-4">Labels</h1>
+    </div>
+  </div>
+<table class = "table table-bordered ">
+  <thead class="bg-dark text-light">
+    <tr>
+      <th>Label Name</th>
+      <th>User</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @labels.each do |label| %>
+      <tr>
+        <td><%= label.name %></td>
+        <td><%= label.user.firstname %></td>
+        <td>
+        <button class="btn btn-outline-primary"><%= link_to 'Edit', edit_label_path(label) %></button>
+        <button class="btn btn-outline-danger"><%= link_to 'Destroy', label, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #fff;color:black">
+  <a class="navbar-brand" href="#" style="margin:auto">Copyright © 2020 TMS. ALL RIGHTS RESERVED. </a>
+  </nav>
