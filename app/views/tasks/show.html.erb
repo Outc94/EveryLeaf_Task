@@ -21,6 +21,13 @@
   <%= @task.priority %>
 </p>
 
+<h6>Labels</h6>
+<% @task.labels.each do |label| %>
+  <li class="ml-4">
+  <%= label.name%>
+  </li>
+<% end %>
+
 <button class="btn btn-outline-primary"><%= link_to 'Edit', edit_task_path(@task) %></button>
 <button class="btn btn-outline-primary"><%= link_to 'Return', tasks_path %></button>
 </div>
