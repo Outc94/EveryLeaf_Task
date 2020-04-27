@@ -16,8 +16,9 @@
         <div class="p-3 mb-2 bg-white text-dark border">
         <h1 class="text-center">Task Management System</h1>
           <div class= "navbar navbar-default">
-                <%= link_to 'Home', tasks_path %>
-                <%= link_to 'My page', user_path(current_user.id) %>
+                <%= link_to "Home", tasks_path %>
+                <%= link_to "My page", user_path(current_user.id) %>
+                <%= link_to "Labels", labels_path%>
                 <%= link_to "User Management", admin_users_path%>
                 <%= link_to "Logout", session_path(current_user.id), method: :delete %>
           </div>
