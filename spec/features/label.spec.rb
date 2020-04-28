@@ -1,11 +1,7 @@
 require 'rails_helper'
 RSpec.feature "Label Management Function", type: :feature do
   background do
-    FactoryBot.create(:user, firstname: 'Mouhamed',
-                             lastname: 'Diop',
-                             email: 'outc@mail.com',
-                             password: 'password',
-                             password_confirmation: 'password')
+    FactoryBot.create(:user)
     visit new_session_path
     fill_in 'email', with: 'outc@mail.com'
     fill_in 'Password', with: 'password'
