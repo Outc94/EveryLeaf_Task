@@ -4,11 +4,11 @@ RSpec.feature "Label Management Function", type: :feature do
     FactoryBot.create(:user, firstname: 'Mouhamed',
                              lastname: 'Diop',
                              email: 'outc@mail.com',
-                             password: 'testing1234',
-                             password_confirmation: 'testing1234')
+                             password: 'password',
+                             password_confirmation: 'password')
     visit new_session_path
     fill_in 'email', with: 'outc@mail.com'
-    fill_in 'Password', with: 'testing1234'
+    fill_in 'Password', with: 'password'
     click_button 'Log in'
     @user = User.first
     FactoryBot.create(:label, name: "label1", user_id: @user.id)
@@ -29,15 +29,6 @@ RSpec.feature "Label Management Function", type: :feature do
   end
 
   scenario "Test Label Creation" do
-    FactoryBot.create(:user, firstname: 'Moustapha',
-                             lastname: 'Dia',
-                             email: 'out@mail.com',
-                             password: 'testing1234',
-                             password_confirmation: 'testing1234')
-    visit new_session_path
-    fill_in 'email', with: 'out@mail.com'
-    fill_in 'Password', with: 'testing1234'
-    click_button 'Log in'
     visit new_label_path
     fill_in 'Name', with: 'label4'
     click_button 'Save'
