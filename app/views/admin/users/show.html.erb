@@ -1,0 +1,44 @@
+<div class="mx-5">
+  <h1><%= @user.firstname %> <%= @user.lastname %></h1>
+  <p>email address: <%= @user.email %></p>
+<div class="p-3 mb-2 bg-white text-dark border">
+<h2 class="text-center">Created Tasks</h2>
+</div>
+</div>
+
+<% @tasks.each do |task| %>
+  <% if @user.id == task.user_id %>
+    <div class="mx-5 p-4 border rounded my-2 bg-light">
+      <div class="text-center">
+      <strong>Created at: </strong>
+      <%= task.created_at %>
+      </div>
+      <h5 class="my-2">
+        <strong><%= task.title %></strong>
+      </h5>
+      <h6>Task starts on <strong><%= task.start_at %></strong> and it ends on: <strong><%= task.end_at%></strong><h6>
+      <p class="mx-2 bg-white p-2">
+        <%= task.content %>
+      </p>
+      <div class="row">
+
+        <div class="col col-10">
+          <!--<button class="btn btn-outline-info"><%= link_to 'Show', task %></button>
+          <button class="btn btn-outline-primary"><%= link_to 'Edit', edit_task_path(task) %></button>
+          <button class="btn btn-outline-danger"><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+        --></div>
+        <div class="col">
+          <p>
+            <strong>Status: </strong>
+            <%= task.status %><br>
+            <strong>Priority:</strong>
+            <%= task.priority %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #fff;color:black">
+  <a class="navbar-brand" href="#" style="margin:auto">Copyright © 2020 TMS. ALL RIGHTS RESERVED. </a>
+  </nav>

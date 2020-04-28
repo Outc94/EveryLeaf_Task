@@ -1,0 +1,45 @@
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<div class="main-form border">
+<h5 class="text-center">Sign Up to keep up with your Deadlines.</h5>
+<%= form_with(model: @user, local: true) do |form| %>
+  <div class="form-group">
+  <%= form.text_field :firstname, placeholder:"First Name", class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= form.text_field :lastname, placeholder:"Last Name", class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= form.email_field :email, placeholder:"Email", class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= form.password_field :password, placeholder:"Password", class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= form.password_field :password_confirmation, placeholder:"Confirm Password", class:"form-control" %>
+  </div>
+
+  <div class="form-group ">
+  <%= form.submit "Sign up", class:"form-control btn btn-info" %>
+  </div>
+<% end %>
+</div>
+<div class="main-form border">
+  <label>Have an account? <a><%= link_to "Log in", new_session_path %><a></label>
+</div>
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #fff;color:black">
+  <a class="navbar-brand" href="#" style="margin:auto">Copyright © 2020 TMS. ALL RIGHTS RESERVED.</a>
+  </nav>
